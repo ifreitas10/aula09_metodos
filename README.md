@@ -55,7 +55,7 @@ public class aula09 {
     public static double[] criaPreencheVetor(){
         double[] vetor = new double[5];
 
-        for (int indice = 0; indice < 2; indice++){
+        for (int indice = 0; indice < 5; indice++){
             vetor[indice] = Integer.parseInt(JOptionPane.showInputDialog("Digite um número"));
         }
         return vetor;
@@ -63,7 +63,7 @@ public class aula09 {
     public static double[] calcularVetorFinal(double[] primeiroVetor, double[] segundoVetor){
         double[] vetor = new double[5];
 
-        for (int indice = 0; indice < 2; indice++){
+        for (int indice = 0; indice < 5; indice++){
             if (primeiroVetor[indice] % 2 == 0){
                 vetor[indice] = primeiroVetor[indice] * segundoVetor[indice];
             } else{
@@ -92,18 +92,22 @@ public class aula09 {
         vetorC = calcularVetorFinal(vetorA, vetorB);
 
 
-        for (int i = 0; i <= 1; i++) {
-            for (int indice = 0; indice < 2; indice++) {
-                System.out.println("Valor do VetorA: " + vetorA[indice]);
+
+            for (int indice = 0; indice < 5; indice++) {
+                JOptionPane.showMessageDialog(null,"Valor do VetorA: " + vetorA[indice]);
+                //System.out.println("Valor do VetorA: " + vetorA[indice]);
+            }
+            for (int indice = 0; indice < 5; indice++) {
+                JOptionPane.showMessageDialog(null,"Valor do VetorB: " + vetorB[indice]);
+                //System.out.println("Valor do VetorB: " + vetorB[indice]);
             }
             System.out.println("--------------------");
-            for (int indice = 0; indice < 2; indice++) {
-                System.out.println("Valor do VetorB: " + vetorB[indice]);
+            for (int indice = 0; indice < 5; indice++) {
+                JOptionPane.showMessageDialog(null,"Valor do VetorC: " + vetorC[indice]);
+                //System.out.println("Valor do C: " + vetorC[indice]);
+                System.out.println("--------------------");
             }
-            for (int indice = 0; indice < 2; indice++) {
-                System.out.println("Valor do C: " + vetorC[indice]);
-            }
-        }
+
         menuDoPrograma();
     }
 
