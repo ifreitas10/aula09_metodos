@@ -49,23 +49,59 @@ import javax.swing.*;
     }
 }*/
 
-public class aula09{
-    //Escreva um programa que leia dois vetores, A e B, de 5 inteiros. Crie um vetor C de 5 inteiros e faça:
-    //Se o elemento de A for par, o respectivo elemento de C deve ser o produto do elemento A com o de B;
-    //Se for ímpar, o respectivo elemento de C deve ser A elevado B;
-    public static void main(String[] args){
-        int[] vetorA = new int[5];
-        int[] vetorB = new int[5];
-        int[] vetorC = new int[5];
-        int indice;
+public class aula09 {
 
-        for(indice = 0; indice<=1; indice++){
-        vetorA[indice] = Integer.parseInt(JOptionPane.showInputDialog("Digite um inteiro"));
-        vetorB[indice] = Integer.parseInt(JOptionPane.showInputDialog("Digite um inteiro"));
-            if(vetorA[indice] % == 0){
-                
+    public static int[] criaPreencheVetor(){
+        int[] vetor = new int[5];
+
+        for (int indice = 0; indice < 2; indice++){
+            vetor[indice] = Integer.parseInt(JOptionPane.showInputDialog("Digite um número"));
+        }
+        return vetor;
+    }
+    public static double[] calcularVetorFinal(double[] primeiroVetor, double[] segundoVetor){
+        double[] vetor = new double[5];
+
+        for (int indice = 0; indice < 2; indice++){
+            if (primeiroVetor[indice] % 2 == 0){
+                vetor[indice] = primeiroVetor[indice] * segundoVetor[indice];
+            } else{
+                vetor[indice] = Math.pow(primeiroVetor[indice], segundoVetor[indice]);
             }
         }
+        return vetor;
+    }
+    public static void menuDoPrograma(){
+        String resposta = JOptionPane.showInputDialog("Deseja continuar? Sim/Não");
 
+        if (resposta.equals("Sim")) {
+            iniciarPrograma();
+        } else {
+            System.out.println("Saiu");
+        }
+    }
+
+    public static void iniciarPrograma() {
+        int[] vetorA = new int[5];
+        int[] vetorB = new int[5];
+
+        vetorA = criaPreencheVetor();
+        vetorB = criaPreencheVetor();
+        
+
+        for (int i = 0; i <= 1; i++) {
+            for (int indice = 0; indice < 2; indice++) {
+                System.out.println("Valor do VetorA: " + vetorA[indice]);
+            }
+            System.out.println("--------------------");
+            for (int indice = 0; indice < 2; indice++) {
+                System.out.println("Valor do VetorB: " + vetorB[indice]);
+            }
+        }
+        menuDoPrograma();
+    }
+
+    public static void main(String[] args) {
+        iniciarPrograma();
     }
 }
