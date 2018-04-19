@@ -49,10 +49,11 @@ import javax.swing.*;
     }
 }*/
 -----------------------------------------------------------------------------------------------------
+
 public class aula09 {
 
-    public static int[] criaPreencheVetor(){
-        int[] vetor = new int[5];
+    public static double[] criaPreencheVetor(){
+        double[] vetor = new double[5];
 
         for (int indice = 0; indice < 2; indice++){
             vetor[indice] = Integer.parseInt(JOptionPane.showInputDialog("Digite um número"));
@@ -82,12 +83,14 @@ public class aula09 {
     }
 
     public static void iniciarPrograma() {
-        int[] vetorA = new int[5];
-        int[] vetorB = new int[5];
+        double[] vetorA = new double[5];
+        double[] vetorB = new double[5];
+        double[] vetorC = new double[5];
 
         vetorA = criaPreencheVetor();
         vetorB = criaPreencheVetor();
-        
+        vetorC = calcularVetorFinal(vetorA, vetorB);
+
 
         for (int i = 0; i <= 1; i++) {
             for (int indice = 0; indice < 2; indice++) {
@@ -96,6 +99,9 @@ public class aula09 {
             System.out.println("--------------------");
             for (int indice = 0; indice < 2; indice++) {
                 System.out.println("Valor do VetorB: " + vetorB[indice]);
+            }
+            for (int indice = 0; indice < 2; indice++) {
+                System.out.println("Valor do C: " + vetorC[indice]);
             }
         }
         menuDoPrograma();
